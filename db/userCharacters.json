@@ -1,0 +1,20 @@
+{
+  "character1": {
+    "membershipId": "4611686018452963830",
+    "characterId": "2305843009267669340",
+    "light": 643,
+    "uid": "EtOErpRasvUiJcZBZJftw4g65bC3"
+  },
+  "character2": {
+    "membershipId": "4611686018452963830",
+    "characterId": "2305843009267669341",
+    "light": 100,
+    "uid": "EtOErpRasvUiJcZBZJftw4g65bC3"
+  },
+  "character3": {
+    "membershipId": "4611686018452963830",
+    "characterId": "2305843009267670224",
+    "light": 406,
+    "uid": "12345"
+  }
+}
