@@ -2,11 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Auth.scss';
 import authRequests from '../../helpers/data/authRequests';
+import smashRequests from '../../helpers/data/smashRequests';
+import bungieRequests from '../../helpers/data/bungieRequests';
+
 
 const defaultUser = {
   email: 'zoeames@gmail.com',
   password: '123456',
   bungieId: '13444526',
+  membershipType: '1',
 };
 
 class Auth extends React.Component {
@@ -31,13 +35,16 @@ class Auth extends React.Component {
 
   bungieIdChange = e => this.formFieldStringState('bungieId', e);
 
+  membershipTypeChange = e => this.formFieldStringState('membershipType', e);
+
   registerUser = (e) => {
     const { newUser } = this.state;
     e.preventDefault();
     authRequests.registerUser(newUser).then((user) => {
-      console.log('register', user.user.uid);
-      // smashRequests.registerBungieUser()
-      // this.props.isAuthenticated();
+      const { uid } = user.user;
+      smashRequests.registerBungieUser(uid, newUser).then((result) => {
+        this.props.isAuthenticated();
+      });
     }).catch(err => console.error('error in auth', err));
   }
 
@@ -45,7 +52,14 @@ class Auth extends React.Component {
     const { newUser } = this.state;
     e.preventDefault();
     authRequests.loginUser(newUser).then(() => {
-      this.props.isAuthenticated();
+      bungieRequests.getDestinyCharacterIds('4611686018452963830').then((characterIds) => {
+        characterIds.forEach((charId) => {
+          bungieRequests.getDestinyCharacter(charId).then(() => {
+
+          });
+        });
+      });
+      // this.props.isAuthenticated();
     }).catch(err => console.error('error in auth', err));
   }
 
@@ -90,6 +104,14 @@ class Auth extends React.Component {
                 value={newUser.bungieId}
                 onChange={this.bungieIdChange}
               />
+            </div>
+            <div className="form-group">
+              <label htmlFor="membership">Select your membership type:</label>
+              <select onChange={this.membershipTypeChange}>
+                <option value="1">Xbox Live</option>
+                <option value="2">PlayStation Network</option>
+                <option value="254">Bungie.net</option>
+              </select>
             </div>
             <button className='btn btn-danger' onClick={this.registerUser}>Register</button>
             <button className='btn btn-info' onClick={this.loginUser}>Login</button>

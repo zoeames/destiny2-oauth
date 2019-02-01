@@ -1,49 +1,47 @@
+
+
 import axios from 'axios';
 import apiKeys from '../apiKeys';
 
-const firebaseUrl = apiKeys.firebaseConfig.databaseURL;
+const bungieApiKey = apiKeys.bungieApi.apiKey;
+const bungieBaseUrl = 'https://www.bungie.net/Platform';
 
-const createUser = user => axios.post(`${firebaseUrl}/users.json`, user);
-
-const getUserByUid = uid => new Promise((resolve, reject) => {
-  axios.get(`${firebaseUrl}/users.json?orderBy="uid"&equalTo="${uid}"`)
+const getBungieAccount = bungieId => new Promise((resolve, reject) => {
+  axios.get(`${bungieBaseUrl}/User/GetMembershipsById/${bungieId}/0/`, { headers: { 'X-API-Key': bungieApiKey } })
     .then((result) => {
-      const userObject = result.data;
-      const userArray = [];
-      if (userObject != null) {
-        Object.keys(userObject).forEach((userId) => {
-          userObject[userId].id = userId;
-          userArray.push(userObject[userId]);
-        });
-      }
-      resolve(userArray[0]);
+      const bungieUser = result.data.Response;
+      const destinyProfile = bungieUser.destinyMemberships[0];
+      resolve(destinyProfile);
     })
     .catch((error) => {
       reject(error);
     });
 });
 
-const getAllUsers = () => new Promise((resolve, reject) => {
-  axios.get(`${firebaseUrl}/users.json`)
+const getDestinyCharacterIds = destinyProfileId => new Promise((resolve, reject) => {
+  axios.get(`${bungieBaseUrl}/Destiny2/1/Profile/${destinyProfileId}/?components=100 `, { headers: { 'X-API-Key': bungieApiKey } })
     .then((result) => {
-      const userObject = result.data;
-      const userArray = [];
-      if (userObject != null) {
-        Object.keys(userObject).forEach((userId) => {
-          userObject[userId].id = userId;
-          userArray.push(userObject[userId]);
-        });
-      }
-      resolve(userArray);
+      const { characterIds } = result.data.Response.profile.data;
+      resolve(characterIds);
     })
     .catch((error) => {
       reject(error);
     });
 });
 
+const getDestinyCharacter = characterId => new Promise((resolve, reject) => {
+  axios.get(`${bungieBaseUrl}/Destiny2/1/Profile/4611686018452963830/Character/${characterId}/?components=200`, { headers: { 'X-API-Key': bungieApiKey } })
+    .then((result) => {
+      const character = result.data.Response.character.data;
+      resolve(character);
+    })
+    .catch((error) => {
+      reject(error);
+    });
+});
 
 export default {
-  getAllUsers,
-  getUserByUid,
-  createUser,
+  getBungieAccount,
+  getDestinyCharacterIds,
+  getDestinyCharacter,
 };
