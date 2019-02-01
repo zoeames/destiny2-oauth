@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import './Auth.scss';
 import authRequests from '../../helpers/data/authRequests';
 import smashRequests from '../../helpers/data/smashRequests';
-import bungieRequests from '../../helpers/data/bungieRequests';
-
 
 const defaultUser = {
   email: 'zoeames@gmail.com',
@@ -42,7 +40,7 @@ class Auth extends React.Component {
     e.preventDefault();
     authRequests.registerUser(newUser).then((user) => {
       const { uid } = user.user;
-      smashRequests.registerBungieUser(uid, newUser).then((result) => {
+      smashRequests.registerBungieUser(uid, newUser).then(() => {
         this.props.isAuthenticated();
       });
     }).catch(err => console.error('error in auth', err));
@@ -52,14 +50,7 @@ class Auth extends React.Component {
     const { newUser } = this.state;
     e.preventDefault();
     authRequests.loginUser(newUser).then(() => {
-      bungieRequests.getDestinyCharacterIds('1', '4611686018452963830').then((characterIds) => {
-        characterIds.forEach((charId) => {
-          bungieRequests.getDestinyCharacter('1', charId).then(() => {
-
-          });
-        });
-      });
-      // this.props.isAuthenticated();
+      this.props.isAuthenticated();
     }).catch(err => console.error('error in auth', err));
   }
 

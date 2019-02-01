@@ -3,6 +3,8 @@
 import axios from 'axios';
 import apiKeys from '../apiKeys';
 
+import authRequests from './authRequests';
+
 const bungieApiKey = apiKeys.bungieApi.apiKey;
 const bungieBaseUrl = 'https://www.bungie.net/Platform';
 
@@ -33,7 +35,21 @@ const getDestinyCharacter = (membershipTypeId, characterId) => new Promise((reso
   axios.get(`${bungieBaseUrl}/Destiny2/${membershipTypeId}/Profile/4611686018452963830/Character/${characterId}/?components=200`, { headers: { 'X-API-Key': bungieApiKey } })
     .then((result) => {
       const character = result.data.Response.character.data;
-      resolve(character);
+      const newCharacter = {
+        characterId: character.characterId,
+        classHash: character.classHash,
+        classType: character.classType,
+        emblemBackgroundPath: `https://www.bungie.net/${character.emblemBackgroundPath}`,
+        emblemHash: character.emblemHash,
+        emblemPath: `https://www.bungie.net/${character.emblemPath}`,
+        genderHash: character.genderHash,
+        genderType: character.genderType,
+        light: character.light,
+        raceHash: character.raceHash,
+        raceType: character.raceType,
+        uid: authRequests.getCurrentUid(),
+      };
+      resolve(newCharacter);
     })
     .catch((error) => {
       reject(error);
