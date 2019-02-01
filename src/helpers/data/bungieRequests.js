@@ -47,6 +47,7 @@ const getDestinyCharacter = (membershipTypeId, characterId) => new Promise((reso
         light: character.light,
         raceHash: character.raceHash,
         raceType: character.raceType,
+        level: character.levelProgression.level,
         uid: authRequests.getCurrentUid(),
       };
       resolve(newCharacter);
