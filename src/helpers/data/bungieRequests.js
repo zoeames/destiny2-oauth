@@ -18,8 +18,8 @@ const getBungieAccount = bungieId => new Promise((resolve, reject) => {
     });
 });
 
-const getDestinyCharacterIds = destinyProfileId => new Promise((resolve, reject) => {
-  axios.get(`${bungieBaseUrl}/Destiny2/1/Profile/${destinyProfileId}/?components=100 `, { headers: { 'X-API-Key': bungieApiKey } })
+const getDestinyCharacterIds = (membershipTypeId, destinyProfileId) => new Promise((resolve, reject) => {
+  axios.get(`${bungieBaseUrl}/Destiny2/${membershipTypeId}/Profile/${destinyProfileId}/?components=100 `, { headers: { 'X-API-Key': bungieApiKey } })
     .then((result) => {
       const { characterIds } = result.data.Response.profile.data;
       resolve(characterIds);
@@ -29,8 +29,8 @@ const getDestinyCharacterIds = destinyProfileId => new Promise((resolve, reject)
     });
 });
 
-const getDestinyCharacter = characterId => new Promise((resolve, reject) => {
-  axios.get(`${bungieBaseUrl}/Destiny2/1/Profile/4611686018452963830/Character/${characterId}/?components=200`, { headers: { 'X-API-Key': bungieApiKey } })
+const getDestinyCharacter = (membershipTypeId, characterId) => new Promise((resolve, reject) => {
+  axios.get(`${bungieBaseUrl}/Destiny2/${membershipTypeId}/Profile/4611686018452963830/Character/${characterId}/?components=200`, { headers: { 'X-API-Key': bungieApiKey } })
     .then((result) => {
       const character = result.data.Response.character.data;
       resolve(character);

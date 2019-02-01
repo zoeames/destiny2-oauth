@@ -52,9 +52,9 @@ class Auth extends React.Component {
     const { newUser } = this.state;
     e.preventDefault();
     authRequests.loginUser(newUser).then(() => {
-      bungieRequests.getDestinyCharacterIds('4611686018452963830').then((characterIds) => {
+      bungieRequests.getDestinyCharacterIds('1', '4611686018452963830').then((characterIds) => {
         characterIds.forEach((charId) => {
-          bungieRequests.getDestinyCharacter(charId).then(() => {
+          bungieRequests.getDestinyCharacter('1', charId).then(() => {
 
           });
         });
