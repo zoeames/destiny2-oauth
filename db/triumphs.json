@@ -1,0 +1,56 @@
+{
+  "triumph1": {
+    "triumphId": "8977484578",
+    "description": "Discover and unlock the Gofannon Forge",
+    "name": "Gofannon Forge discovered",
+    "icon": "https://bungie.net/common/destiny2_content/icons/392725cd9ec58fedc5e0d65b7835c076.png",
+    "scope": 1,
+    "isComplete": true,
+    "completedDate": "018-12-03T03:23:05Z",
+    "isFeatured": true,
+    "uid": "EtOErpRasvUiJcZBZJftw4g65bC3"
+  },
+  "triumph2": {
+    "triumphId": "93746589340",
+    "description": "Discover and unlock the Izanami Forge",
+    "name": "Izanami Forge discovered",
+    "icon": "https://bungie.net/common/destiny2_content/icons/392725cd9ec58fedc5e0d65b7835c076.png",
+    "scope": 1,
+    "isComplete": true,
+    "completedDate": "018-12-03T03:23:05Z",
+    "isFeatured": false,
+    "uid": "EtOErpRasvUiJcZBZJftw4g65bC3"
+  },
+  "triumph3": {
+    "triumphId": "4765839307",
+    "description": "In Season 4, complete the weekly challenge in Gambit.",
+    "name": "Weekly Challenge",
+    "icon": "https://bungie.net/common/destiny2_content/icons/07d85274ab11a78f98ce159ac40928ea.png",
+    "scope": 0,
+    "isComplete": true,
+    "completedDate": "018-12-03T03:23:05Z",
+    "isFeatured": false,
+    "uid": "EtOErpRasvUiJcZBZJftw4g65bC3"
+  },
+  "triumph4": {
+    "triumphId": "4784658390",
+    "description": "Explore the Empty Tank on the Tangled Shore.",
+    "name": "Seedy Underbelly",
+    "icon": "https://bungie.net/common/destiny2_content/icons/6a2761d2475623125d896d1a424a91f9.png",
+    "scope": 1,
+    "isComplete": true,
+    "completedDate": "018-12-03T03:23:05Z",
+    "isFeatured": false,
+    "uid": "12345"
+  },
+  "triumph5": {
+    "triumphId": "1469598452",
+    "description": "Complete Nightfall strike \"Warden of Nothing\" without taking any Solar damage during the final encounter.",
+    "name": "Solar Dance",
+    "icon": "https://bungie.net/common/destiny2_content/icons/1538509805dda202c0d14771fe4f6d20.png",
+    "scope": 0,
+    "isComplete": false,
+    "isFeatured": false,
+    "uid": "12345"
+  }
+}

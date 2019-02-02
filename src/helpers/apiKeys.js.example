@@ -9,6 +9,8 @@ const apiKeys = {
   },
   bungieApi: {
     apiKey: '',
+    oAuthUrl: '',
+    oAuthClientId: '',
   },
 };
 
