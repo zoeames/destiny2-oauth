@@ -1,9 +1,8 @@
-
-
 import axios from 'axios';
 import apiKeys from '../apiKeys';
 
 import authRequests from './authRequests';
+import destiny2ManifestLookup from '../destiny2ManifestLookup';
 
 const bungieApiKey = apiKeys.bungieApi.apiKey;
 const bungieBaseUrl = 'https://www.bungie.net/Platform';
@@ -36,17 +35,13 @@ const getDestinyCharacter = (membershipTypeId, characterId) => new Promise((reso
     .then((result) => {
       const character = result.data.Response.character.data;
       const newCharacter = {
-        characterId: character.characterId,
-        classHash: character.classHash,
-        classType: character.classType,
-        emblemBackgroundPath: `https://www.bungie.net/${character.emblemBackgroundPath}`,
-        emblemHash: character.emblemHash,
-        emblemPath: `https://www.bungie.net/${character.emblemPath}`,
-        genderHash: character.genderHash,
-        genderType: character.genderType,
+        destinyCharacterId: character.characterId,
         light: character.light,
-        raceHash: character.raceHash,
-        raceType: character.raceType,
+        gender: destiny2ManifestLookup.genderLookup(character.genderHash),
+        race: destiny2ManifestLookup.raceLookup(character.raceHash),
+        class: destiny2ManifestLookup.classLookup(character.classHash),
+        emblemBackgroundPath: `https://www.bungie.net/${character.emblemBackgroundPath}`,
+        emblemPath: `https://www.bungie.net/${character.emblemPath}`,
         level: character.levelProgression.level,
         uid: authRequests.getCurrentUid(),
       };

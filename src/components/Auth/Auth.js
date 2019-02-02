@@ -5,9 +5,9 @@ import authRequests from '../../helpers/data/authRequests';
 import smashRequests from '../../helpers/data/smashRequests';
 
 const defaultUser = {
-  email: 'zoeames@gmail.com',
-  password: '123456',
-  bungieId: '13444526',
+  email: '',
+  password: '',
+  bungieId: '',
   membershipType: '1',
 };
 

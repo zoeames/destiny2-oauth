@@ -1,0 +1,46 @@
+{
+  "character1" : {
+    "class" : "Titan",
+    "destinyCharacterId" : "2305843009267669341",
+    "emblemBackgroundPath" : "https://www.bungie.net//common/destiny2_content/icons/ecafe3e611c54e78656b85b77c8ee2f7.jpg",
+    "emblemPath" : "https://www.bungie.net//common/destiny2_content/icons/cb30b5a9b34f7204b064570b56576562.jpg",
+    "gender" : "Female",
+    "level" : 1,
+    "light" : 100,
+    "race" : "Awoken",
+    "uid" : "G2OUtvlfp1fSbya0VeYBkSZiolS2"
+  },
+  "character2" : {
+    "class" : "Hunter",
+    "destinyCharacterId" : "2305843009267669340",
+    "emblemBackgroundPath" : "https://www.bungie.net//common/destiny2_content/icons/82982ff7e0536b5260dda5182caa9637.jpg",
+    "emblemPath" : "https://www.bungie.net//common/destiny2_content/icons/86cc790e7179f3bf4643e7740ab65893.jpg",
+    "gender" : "Female",
+    "level" : 50,
+    "light" : 644,
+    "race" : "Human",
+    "uid" : "G2OUtvlfp1fSbya0VeYBkSZiolS2"
+  },
+  "character3" : {
+    "class" : "Warlock",
+    "destinyCharacterId" : "2305843009267670224",
+    "emblemBackgroundPath" : "https://www.bungie.net//common/destiny2_content/icons/73f5f779f40bfecb4690c395bc1941b9.jpg",
+    "emblemPath" : "https://www.bungie.net//common/destiny2_content/icons/911791e90f955fc637398ea88aba74b7.jpg",
+    "gender" : "Female",
+    "level" : 36,
+    "light" : 406,
+    "race" : "Human",
+    "uid" : "G2OUtvlfp1fSbya0VeYBkSZiolS2"
+  },
+  "character4" : {
+    "class" : "Hunter",
+    "destinyCharacterId" : "2305843009267669340",
+    "emblemBackgroundPath" : "https://www.bungie.net//common/destiny2_content/icons/82982ff7e0536b5260dda5182caa9637.jpg",
+    "emblemPath" : "https://www.bungie.net//common/destiny2_content/icons/86cc790e7179f3bf4643e7740ab65893.jpg",
+    "gender" : "Female",
+    "level" : 50,
+    "light" : 644,
+    "race" : "Human",
+    "uid" : "2ZDnDdQDclP99Y7B5SQloPZBKoQ2"
+  }
+}
