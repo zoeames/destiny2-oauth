@@ -1,5 +1,6 @@
 {
   "users": "fish",
-  "userCharacters": "cow",
-  "triumphs": "turtle"
+  "characters": "cow",
+  "triumphs": "turtle",
+  "userTriumphs": "bear"
 }

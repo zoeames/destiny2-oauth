@@ -1,0 +1,38 @@
+{
+  "userTriumph1": {
+    "triumphId": "triumph1",
+    "isComplete": true,
+    "completedDate": "018-12-03T03:23:05Z",
+    "isFeatured": true,
+    "uid": "EtOErpRasvUiJcZBZJftw4g65bC3"
+
+  },
+  "userTriumph2": {
+    "triumphId": "triumph2",
+    "isComplete": true,
+    "completedDate": "018-12-03T03:23:05Z",
+    "isFeatured": false,
+    "uid": "EtOErpRasvUiJcZBZJftw4g65bC3"
+  },
+  "userTriumph3": {
+    "triumphId": "triumph3",
+    "isComplete": true,
+    "completedDate": "018-12-03T03:23:05Z",
+    "isFeatured": false,
+    "uid": "EtOErpRasvUiJcZBZJftw4g65bC3"
+  },
+  "userTriumph4": {
+    "triumphId": "triumph4",
+    "isComplete": true,
+    "completedDate": "018-12-03T03:23:05Z",
+    "isFeatured": false,
+    "uid": "12345"
+  },
+  "userTriumph5": {
+    "triumphId": "triumph5",
+    "scope": 0,
+    "isComplete": false,
+    "isFeatured": false,
+    "uid": "12345"
+  }
+}

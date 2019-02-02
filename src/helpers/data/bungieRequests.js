@@ -35,7 +35,7 @@ const getDestinyCharacter = (membershipTypeId, characterId) => new Promise((reso
     .then((result) => {
       const character = result.data.Response.character.data;
       const newCharacter = {
-        characterId: character.characterId,
+        destinyCharacterId: character.characterId,
         light: character.light,
         gender: destiny2ManifestLookup.genderLookup(character.genderHash),
         race: destiny2ManifestLookup.raceLookup(character.raceHash),
