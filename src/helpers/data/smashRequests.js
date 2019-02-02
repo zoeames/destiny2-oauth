@@ -9,9 +9,9 @@ const registerBungieUser = (uid, newUser) => new Promise((resolve, reject) => {
       destiny2MembershipId = bungieAccountResult.membershipId;
       const uzer = {
         displayName: bungieAccountResult.displayName,
-        destinyIconPath: `https://www.bungie.net/${bungieAccountResult.iconPath}`,
         destinyMembershipId: destiny2MembershipId,
         destinyMembershipType: bungieAccountResult.membershipType,
+        bungieMembershipIcon: `https://www.bungie.net/${bungieAccountResult.iconPath}`,
         bungieMembershipType: newUser.membershipType,
         bungieId: newUser.bungieId,
         uid,
